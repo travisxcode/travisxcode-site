@@ -71,7 +71,18 @@ export const snowball: Project = {
     },
   ],
   technologies: ["iOS", "Swift", "Product design"],
-  links: [],
+  links: [
+    {
+      label: "Website",
+      href: "https://snowball.clabcorp.org/",
+      external: true,
+    },
+    {
+      label: "App Store",
+      href: "https://apps.apple.com/us/app/snowball-debt-wealth/id6759896979",
+      external: true,
+    },
+  ],
   sections: [
     {
       id: "overview",
@@ -200,7 +211,7 @@ export const snowball: Project = {
       id: "outcome",
       title: "Outcome",
       paragraphs: [
-        "The product is a personal iOS application I designed, built, and use. There is no public store listing on this page.",
+        "Snowball is live on the App Store. The site and the listing are public.",
       ],
     },
     {

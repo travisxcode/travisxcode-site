@@ -143,7 +143,6 @@ This site is the public portfolio. Case studies use screenshots and diagrams. Th
 
 Still off the page, on purpose:
 
-- Snowball App Store URL — add when there is a public listing
 - Experience dates for Booking.com / Agoda and LINE MAN Wongnai — still `Previous` until confirmed
 - X / Twitter — omitted until a URL exists
 - Pinterest outcomes beyond “shipped in the US with Walmart” — only if they are public
