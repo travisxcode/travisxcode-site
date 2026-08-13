@@ -7,6 +7,7 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, onOpen }: ProjectCardProps) {
+  const shipped = project.status === "LIVE";
   const glow = `radial-gradient(120% 90% at 20% 10%, ${project.glow.via ?? project.glow.from} 0%, transparent 55%), linear-gradient(160deg, ${project.glow.from} 0%, ${project.glow.via ?? project.glow.from} 42%, ${project.glow.to} 100%)`;
 
   return (
@@ -55,7 +56,7 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
           <div className="project-sheet absolute inset-x-3 bottom-3 sm:inset-x-auto sm:bottom-5 sm:right-5 sm:w-[22rem]">
             <div className="rounded-[18px] border border-white/10 bg-sheet p-4 shadow-[0_16px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl sm:p-5">
               <p className="inline-flex items-center gap-2 rounded-full bg-white/5 px-2.5 py-1 font-mono text-[0.62rem] tracking-[0.16em] uppercase text-ink">
-                <span className="live-dot" aria-hidden="true" />
+                {shipped ? <span className="live-dot" aria-hidden="true" /> : null}
                 {project.status}
               </p>
               <h3 className="mt-3 text-xl font-semibold leading-tight tracking-[-0.03em] text-ink sm:text-[1.45rem]">
@@ -66,8 +67,8 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
               </p>
               <dl className="mt-4 grid grid-cols-2 gap-3 font-mono text-[0.62rem] tracking-[0.08em] uppercase">
                 <div>
-                  <dt className="text-ink-faint">Shipped in</dt>
-                  <dd className="mt-1 text-ink">{project.year}</dd>
+                  <dt className="text-ink-faint">{shipped ? "Shipped in" : "Shipped"}</dt>
+                  <dd className="mt-1 text-ink">{shipped ? project.year : "Not yet"}</dd>
                 </div>
                 <div>
                   <dt className="text-ink-faint">Platform</dt>

@@ -16,10 +16,16 @@ export function CaseStudyArticle({
   return (
     <article className="case-modal px-5 pb-8 pt-14 sm:px-10 sm:pb-12 sm:pt-16">
       <p className="inline-flex items-center gap-2 rounded-full bg-black/5 px-2.5 py-1 font-mono text-[0.62rem] tracking-[0.14em] uppercase text-zinc-600">
-        <span className="live-dot" aria-hidden="true" />
+        {project.status === "LIVE" ? (
+          <span className="live-dot" aria-hidden="true" />
+        ) : null}
         {project.status}
-        <span aria-hidden="true"> · </span>
-        {project.year}
+        {project.status === "LIVE" ? (
+          <>
+            <span aria-hidden="true"> · </span>
+            {project.year}
+          </>
+        ) : null}
       </p>
       <p className="mt-4 font-mono text-[0.68rem] tracking-[0.12em] uppercase text-zinc-400">
         {project.role}

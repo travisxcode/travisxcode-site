@@ -6,7 +6,7 @@ export const centaures: Project = {
   title: "Centaurse",
   thesis: "Training software that people will actually finish.",
   category: "Product / SaaS / LMS",
-  status: "LIVE / DEMO",
+  status: "IN DEVELOPMENT",
   year: "2026",
   role: "Founder & Engineer",
   platform: "Web",
@@ -213,7 +213,7 @@ export const centaures: Project = {
       id: "outcome",
       title: "Outcome",
       paragraphs: [
-        "The product is in a live / demo state. The walkthrough here is a working hospitality demo — portal, admin, player, and completion — on the public site.",
+        "The product is in development. It is not shipped. The walkthrough here is a working demo of the portal, admin, player, and completion — not a released product.",
       ],
     },
     {

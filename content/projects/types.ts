@@ -1,4 +1,4 @@
-export type ProjectStatus = "LIVE" | "LIVE / DEMO" | "IN PROGRESS";
+export type ProjectStatus = "LIVE" | "IN DEVELOPMENT";
 
 export type MediaKind = "hero" | "full" | "split" | "device" | "browser";
 
