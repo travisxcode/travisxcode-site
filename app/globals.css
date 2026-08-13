@@ -8,11 +8,12 @@
   --ink-faint: #78716c;
   --line: #1c1c1f;
   --line-strong: #2a2a2e;
-  --accent: #f4f4f5;
+  --accent: #f06a0c;
+  --accent-wash: rgba(240, 106, 12, 0.12);
   --live: #3ee07a;
   --live-wash: rgba(62, 224, 122, 0.12);
   --placeholder: #141416;
-  --focus: #f5f5f4;
+  --focus: #f06a0c;
   --sheet: rgba(12, 12, 14, 0.88);
 }
 
@@ -25,6 +26,7 @@
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
   --color-accent: var(--accent);
+  --color-accent-wash: var(--accent-wash);
   --color-live: var(--live);
   --color-live-wash: var(--live-wash);
   --color-placeholder: var(--placeholder);
@@ -49,8 +51,8 @@ body {
 }
 
 ::selection {
-  background: #f5f5f4;
-  color: #070708;
+  background: var(--accent);
+  color: #fff;
 }
 
 :focus-visible {
@@ -86,7 +88,7 @@ body {
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: var(--accent);
 }
 
 .prose-site p {
@@ -150,7 +152,7 @@ body {
 }
 
 .experience-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--accent-wash);
 }
 
 .project-sheet {

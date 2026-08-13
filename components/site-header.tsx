@@ -10,7 +10,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-paper/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b-2 border-accent bg-paper/80 backdrop-blur-md">
       <Container className="flex items-center justify-between gap-6 py-3.5">
         <Link href="/" className="flex items-center gap-3">
           <LiveClock />
@@ -20,14 +20,14 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-ink-soft transition-colors hover:text-ink"
+              className="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-ink-soft transition-colors hover:text-accent"
             >
               {item.label}
             </a>
           ))}
           <a
             href={`mailto:${site.email}`}
-            className="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-ink transition-colors hover:text-live"
+            className="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-accent transition-colors hover:text-ink"
           >
             Say hello 👋
           </a>
@@ -63,9 +63,7 @@ export function SiteHeader() {
             ))}
             <a
               href={`mailto:${site.email}`}
-              className="font-mono text-[0.8rem] tracking-[0.16em] uppercase text-ink"
-            >
-              Say hello
+              className="font-mono text-[0.8rem] tracking-[0.16em] uppercase text-accent"
             </a>
           </Container>
         </div>

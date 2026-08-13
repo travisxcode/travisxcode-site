@@ -10,7 +10,7 @@ export function WhatIDo() {
         <span className="text-ink">Senior Software Engineer </span>
         <span className="whitespace-nowrap">
           <span className="text-ink-faint">at </span>
-          <span className="text-ink">Pinterest. </span>
+          <span className="text-accent">Pinterest. </span>
         </span>
         <span className="text-ink-faint">I build </span>
         <span className="text-ink">products and systems </span>

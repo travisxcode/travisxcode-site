@@ -10,8 +10,7 @@ export const experiences: Experience[] = [
     role: "Sr. iOS Engineer",
     company: "Pinterest",
     date: "Present",
-    tagline:
-      "Find the inspiration to create a life you love. Find your next art project, outfit idea, or recipe here.",
+    tagline: "500 million monthly active users.",
   },
   {
     role: "Sr. iOS Engineer",

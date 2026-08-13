@@ -10,7 +10,7 @@ export function ExperienceList() {
         <SectionHeading>HIGHLIGHTED EXPERIENCES</SectionHeading>
         <a
           href={site.linkedin}
-          className="mb-5 font-mono text-[0.68rem] tracking-[0.16em] uppercase text-ink-faint transition-colors hover:text-ink sm:mb-6"
+          className="mb-5 font-mono text-[0.68rem] tracking-[0.16em] uppercase text-ink-faint transition-colors hover:text-accent sm:mb-6"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -32,7 +32,11 @@ export function ExperienceList() {
                   {item.tagline}
                 </p>
               </div>
-              <p className="font-mono text-[0.72rem] tracking-[0.12em] uppercase text-ink-faint sm:text-right">
+              <p
+                className={`font-mono text-[0.72rem] tracking-[0.12em] uppercase sm:text-right ${
+                  item.date === "Present" ? "text-accent" : "text-ink-faint"
+                }`}
+              >
                 {item.date}
               </p>
             </article>

@@ -18,7 +18,7 @@ export function Hero() {
       </div>
       <h1 className="display text-[clamp(3.8rem,12vw,8.5rem)] text-ink">
         <span className="block">{site.firstName}</span>
-        <span className="block">{site.lastName}</span>
+        <span className="block text-accent">{site.lastName}</span>
       </h1>
       <p className="mt-5 font-mono text-[0.72rem] tracking-[0.14em] uppercase text-ink-faint">
         {site.role}

@@ -11,7 +11,7 @@ export function ArticleCard({ article, onOpen }: ArticleCardProps) {
     <button
       type="button"
       onClick={() => onOpen(article.slug)}
-      className="group grid w-full gap-4 rounded-[20px] border border-line p-3 text-left transition-colors hover:border-line-strong hover:bg-white/[0.03] sm:grid-cols-[9rem_minmax(0,1fr)] sm:items-center sm:p-4"
+      className="group grid w-full gap-4 rounded-[20px] border border-line p-3 text-left transition-colors hover:border-accent/50 hover:bg-accent-wash sm:grid-cols-[9rem_minmax(0,1fr)] sm:items-center sm:p-4"
     >
       <div className="relative aspect-[16/10] overflow-hidden rounded-[14px] bg-paper-raised">
         <Image

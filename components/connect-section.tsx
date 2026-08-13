@@ -11,7 +11,7 @@ export function ConnectSection() {
           <li key={item.label}>
             <a
               href={item.href}
-              className="display text-[clamp(1.8rem,4vw,3.2rem)] font-medium tracking-[-0.04em] text-ink-soft transition-colors hover:text-ink"
+              className="display text-[clamp(1.8rem,4vw,3.2rem)] font-medium tracking-[-0.04em] text-ink-soft transition-colors hover:text-accent"
               {...(item.href.startsWith("http")
                 ? { target: "_blank", rel: "noreferrer noopener" }
                 : undefined)}

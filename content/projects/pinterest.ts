@@ -11,7 +11,7 @@ export const pinterest: Project = {
   role: "Senior iOS Engineer",
   platform: "iOS",
   summary:
-    "Shoppable recipes on iOS — from a pin you saved to a list you can buy, without turning Pinterest into a grocery store.",
+    "Shoppable recipes for 500 million monthly active users — from a pin you saved to a list you can buy.",
   description:
     "People come to Pinterest for food. They save recipes. For a long time, the most we could do with a rich recipe pin was show the ingredients. Shoppable recipes close that gap: a shop action on the pin, a list you can edit, and a handoff to a retailer when you are ready to buy.",
   glow: {

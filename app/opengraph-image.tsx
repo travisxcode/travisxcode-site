@@ -49,6 +49,7 @@ export default function OpenGraphImage() {
               fontSize: 88,
               lineHeight: 0.95,
               letterSpacing: "-0.04em",
+              color: "#F06A0C",
             }}
           >
             {site.lastName}
