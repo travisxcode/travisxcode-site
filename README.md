@@ -80,26 +80,35 @@ The image is a multi-stage build: Node compiles the static export, Caddy serves 
 
 Primary domain: `https://travisxcode.com`
 
-Railway does **not** publish a static IP. Custom domains use a **CNAME** plus a **TXT** verification record. Railway shows the exact values after you add the domain in the service settings.
+The site is already attached in Railway. Preview (live now, do not switch DNS until you have checked it):
 
-GoDaddy DNS does **not** support CNAME flattening / ALIAS at the apex (`travisxcode.com`). Railway documents GoDaddy in the list of providers that cannot point a root domain at a Railway hostname with a CNAME.
+**https://web-production-4a787.up.railway.app**
+
+Railway does **not** publish a static IP. Each custom domain needs a **CNAME** plus the **TXT** verification record shown in the Railway dashboard. Both are required. Without the TXT record the hostname can resolve and still return 404.
+
+Exact CNAME targets issued for this service:
+
+| Host | Type | Target |
+| --- | --- | --- |
+| `travisxcode.com` | CNAME | `ob5h7jvb.up.railway.app` |
+| `www.travisxcode.com` | CNAME | `a764jthn.up.railway.app` |
+
+Copy the matching **TXT** records from Railway → `travisxcode-site` → `web` → Settings → Public Networking. They are unique per domain.
+
+GoDaddy DNS does **not** support CNAME flattening / ALIAS at the apex (`travisxcode.com`). Railway lists GoDaddy among providers that cannot point a root domain at a Railway hostname with a CNAME.
 
 Recommended path:
 
-1. Keep GoDaddy as the registrar.
-2. Move **DNS only** to Cloudflare (free). Leave the nameservers change until the Railway deploy is confirmed on `*.up.railway.app`.
-3. In Railway → service → Public Networking → Custom Domain, add:
-   - `travisxcode.com`
-   - `www.travisxcode.com`
-4. In Cloudflare DNS, add the records Railway displays:
-   - CNAME for `@` → Railway hostname (proxy can be on)
-   - CNAME for `www` → `@` or the same Railway hostname
-   - TXT verification records exactly as shown
-5. Cloudflare SSL/TLS mode: **Full** (not Full Strict) if the orange cloud is on.
-6. Railway issues Let’s Encrypt automatically after both CNAME and TXT verify.
-7. Optional: Cloudflare bulk redirect from `https://www.travisxcode.com` → `https://travisxcode.com`.
+1. Confirm the Railway URL above: homepage, `/work/pinterest/`, and a refresh on that nested URL.
+2. Keep GoDaddy as the registrar.
+3. Move **DNS only** to Cloudflare (free). Change nameservers only after the Railway preview looks right.
+4. In Cloudflare DNS, add the two CNAMEs above. For `@`, Cloudflare flattens the CNAME automatically. Proxy (orange cloud) can be on.
+5. Add the TXT records from the Railway dashboard.
+6. Cloudflare SSL/TLS mode: **Full** (not Full Strict) if the orange cloud is on.
+7. Railway issues Let’s Encrypt after CNAME + TXT verify.
+8. Optional: Cloudflare bulk redirect `https://www.travisxcode.com` → `https://travisxcode.com`.
 
-Current GoDaddy records (Firebase era — **do not delete until the Railway URL is confirmed working**):
+Current GoDaddy records (Firebase era — **do not delete until travisxcode.com is confirmed on Railway**):
 
 | Type | Name | Value |
 | --- | --- | --- |
@@ -112,10 +121,10 @@ Nameservers today: `ns41.domaincontrol.com` / `ns42.domaincontrol.com`.
 After Railway is live on the custom domain:
 
 - Remove the Firebase A record `199.36.158.100`
-- Remove TXT `hosting-site=travisxcode` if Railway does not need it
+- Remove TXT `hosting-site=travisxcode` if it is not one of the Railway verification records
 - Keep any unrelated records (email, etc.)
 
-If you do not want to move DNS to Cloudflare, a weaker fallback is: point `www` at Railway via CNAME, and use GoDaddy forwarding from the apex to `https://www.travisxcode.com`. The canonical site would then be `www`. Prefer Cloudflare so `travisxcode.com` can stay canonical.
+If you do not want to move DNS to Cloudflare, a weaker fallback is: point `www` at `a764jthn.up.railway.app` via CNAME, and use GoDaddy forwarding from the apex to `https://www.travisxcode.com`. The canonical site would then be `www`. Prefer Cloudflare so `travisxcode.com` can stay canonical.
 
 ### How future changes deploy
 
