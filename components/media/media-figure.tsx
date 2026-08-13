@@ -47,7 +47,7 @@ export function MediaFigure({
     <figure className={className}>
       <button
         type="button"
-        className="media-hover block w-full overflow-hidden border border-line bg-placeholder text-left"
+        className="media-hover block w-full overflow-hidden rounded-[18px] border border-line bg-placeholder text-left"
         onClick={() => setOpen(true)}
         aria-label={`Expand image: ${media.alt}`}
       >

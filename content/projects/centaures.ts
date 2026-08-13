@@ -12,9 +12,9 @@ export const centaures: Project = {
   platform: "Web",
   type: "Online Training Platform",
   summary:
-    "A modern training platform for teams — courses, a focused learner experience, and the admin tools to run it.",
+    "A modern training platform for teams — a company portal, a focused player, and the admin tools to run it.",
   description:
-    "Centaurse is an online training platform I am building for small and mid-size teams. Admins compose courses from lessons and content blocks. Employees move through a focused player. The product is meant to feel current — not like a slide deck wearing a login screen.",
+    "Centaurse is an online training platform I am building for small and mid-size teams. A company gets its own portal. Admins compose courses from lessons and content blocks. Learners move through a focused player and leave with a completion they can trust.",
   glow: {
     from: "#041820",
     via: "#0084c7",
@@ -22,24 +22,52 @@ export const centaures: Project = {
   },
   hero: {
     kind: "browser",
-    alt: "Centaurse training platform",
-    label: "Centaurse · Web",
+    src: "/images/projects/centaures/dashboard.png",
+    alt: "Centaurse admin overview — people, published courses, completions, and course activity",
+    caption: "The workspace: who is in it, what is assigned, and what actually got finished.",
   },
   gallery: [
     {
       kind: "browser",
-      alt: "Centaurse admin experience",
-      label: "Admin · screenshot · TODO",
+      src: "/images/projects/centaures/login.png",
+      alt: "Centaurse login with a company portal domain",
+      caption: "A company portal, not a generic login dump.",
+    },
+    {
+      kind: "full",
+      src: "/images/projects/centaures/dashboard.png",
+      alt: "Centaurse admin dashboard",
+      caption: "Overview for operators.",
     },
     {
       kind: "browser",
-      alt: "Centaurse course player",
-      label: "Learner · screenshot · TODO",
+      src: "/images/projects/centaures/admin-create-course.png",
+      alt: "Create a new course as a draft",
+      caption: "A course starts as a draft.",
     },
     {
-      kind: "split",
-      alt: "Centaurse course management",
-      label: "Course management · screenshot · TODO",
+      kind: "browser",
+      src: "/images/projects/centaures/course-preview.png",
+      alt: "Learner home showing the next course to continue",
+      caption: "The next session, with time left and progress.",
+    },
+    {
+      kind: "full",
+      src: "/images/projects/centaures/course-first-page.png",
+      alt: "Centaurse course player on the first lesson",
+      caption: "The player.",
+    },
+    {
+      kind: "full",
+      src: "/images/projects/centaures/flips-true-false.png",
+      alt: "Flip cards and a true or false check in a lesson",
+      caption: "You do the course. You do not click through a PDF.",
+    },
+    {
+      kind: "browser",
+      src: "/images/projects/centaures/course-cert.png",
+      alt: "Training complete screen",
+      caption: "Finished.",
     },
   ],
   technologies: [
@@ -61,7 +89,7 @@ export const centaures: Project = {
       id: "overview",
       title: "Overview",
       paragraphs: [
-        "Centaurse is a training product for SMEs. Companies need employees to learn — onboarding, tools, compliance, ethics — and most of the software in that category still feels like a leftover from another decade.",
+        "Centaurse is a training product for SMEs. Companies need employees to learn — onboarding, tools, hospitality, safety, compliance — and most of the software in that category still feels like a leftover from another decade.",
         "The product has two sides that have to be equally good. Admins need to build and run courses. Learners need a session they will actually finish.",
       ],
     },
@@ -78,35 +106,100 @@ export const centaures: Project = {
       title: "My Role",
       paragraphs: [
         "I am building Centaures as a complete product: the concept, the information architecture, the learner and admin experiences, and the systems underneath.",
-        "That includes course management, a training player, progress, and the operational pieces a real company needs before they will put employees into it.",
+        "That includes company portals, course management, a training player, progress, and the operational pieces a real company needs before they will put employees into it.",
       ],
     },
     {
-      id: "product",
-      title: "Product",
+      id: "portal",
+      title: "A company portal",
       paragraphs: [
-        "Admins compose courses from lessons. Lessons are made of content blocks rather than a single uploaded file. Learners move through a focused player designed for attention, not for a dashboard full of chrome.",
-        "The product is intended to cover the work companies actually run: skills, process, and the compliance and ethics training that has to be trackable.",
-        "Demo screenshots of the admin experience, the course builder, and the learner player will be added here.",
+        "You do not land in a generic SaaS dump. Each company has a portal — pai.centaurse.com in this demo — so login is already about that workplace.",
+        "The first screen has to feel like the company's training, not a vendor's marketing site with a form on it.",
       ],
       media: [
         {
           kind: "browser",
-          alt: "Centaurse admin forthcoming",
-          label: "Admin experience · TODO",
+          src: "/images/projects/centaures/login.png",
+          alt: "Centaurse login — portal domain, username, and password",
+          caption: "Log in to the company's training, not a shared marketplace.",
+        },
+      ],
+    },
+    {
+      id: "workspace",
+      title: "Run it",
+      paragraphs: [
+        "Operators need a room that answers the only questions that matter: who is here, what is published, what got finished, and who is stuck.",
+        "From the same workspace you start a course as a draft. Title, description, then build. Nothing goes live until you publish it.",
+      ],
+      media: [
+        {
+          kind: "full",
+          src: "/images/projects/centaures/dashboard.png",
+          alt: "Admin overview with people, published courses, completions, and a nudge for incomplete assignments",
+          caption: "Overview — people, courses, completions, and a nudge when someone stalls.",
         },
         {
           kind: "browser",
-          alt: "Centaurse player forthcoming",
-          label: "Training player · TODO",
+          src: "/images/projects/centaures/admin-create-course.png",
+          alt: "Create a new course modal with title and short description",
+          caption: "Create a draft. Publish later.",
+        },
+      ],
+    },
+    {
+      id: "session",
+      title: "Take it",
+      paragraphs: [
+        "The learner side is a session, not a dashboard full of chrome. Your next course is obvious: time left, how far you are, one button to continue.",
+        "Inside the player, a lesson is blocks — intro, expand, continue — so attention stays on one beat at a time.",
+      ],
+      media: [
+        {
+          kind: "browser",
+          src: "/images/projects/centaures/course-preview.png",
+          alt: "Learner home with Kitchen Safety course, 15 percent complete, and a continue button",
+          caption: "Your next course, with a deadline and a way back in.",
         },
         {
           kind: "full",
-          alt: "Centaurse course management forthcoming",
-          label: "Course management · TODO",
+          src: "/images/projects/centaures/course-first-page.png",
+          alt: "Course player showing Welcome to PAI Food Safety with expandable blocks",
+          caption: "The player — one lesson, a few blocks, continue when you have done the work.",
         },
       ],
-      todo: "Add demo screenshots: landing, admin, course builder, learner player.",
+    },
+    {
+      id: "practice",
+      title: "Do the work",
+      paragraphs: [
+        "A course people finish is a course they have to do something in. Flip the cards. Answer true or false. The player checks that the beat actually happened before you move on.",
+        "That is the difference between training software and a PDF wearing a login screen.",
+      ],
+      media: [
+        {
+          kind: "full",
+          src: "/images/projects/centaures/flips-true-false.png",
+          alt: "Lesson with flip cards completed and a true or false question about confirming peanut ingredients",
+          caption: "Flip cards, then a check. The next button waits.",
+        },
+      ],
+    },
+    {
+      id: "finish",
+      title: "Finish it",
+      paragraphs: [
+        "Completion is a moment, not a row in a spreadsheet the learner never sees. When the last lesson is done, the product says so — course name, date, done.",
+        "That record is what the admin overview was counting. Both sides of the product close the same loop.",
+      ],
+      media: [
+        {
+          kind: "browser",
+          src: "/images/projects/centaures/course-cert.png",
+          alt: "Training complete card for Exceptional Thai Hospitality",
+          caption: "Training complete.",
+        },
+      ],
     },
     {
       id: "engineering",
@@ -120,9 +213,8 @@ export const centaures: Project = {
       id: "outcome",
       title: "Outcome",
       paragraphs: [
-        "The product is in a live / demo state. A working demo exists for walking through admin and learner flows.",
+        "The product is in a live / demo state. The walkthrough here is a working hospitality demo — portal, admin, player, and completion — on the public site.",
       ],
-      todo: "Add a public demo URL when it should be linked from this page. Do not invent user or revenue numbers.",
     },
     {
       id: "learned",

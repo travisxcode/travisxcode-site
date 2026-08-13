@@ -22,15 +22,28 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
           style={{ background: glow }}
         >
           {project.hero.src ? (
-            <div className="absolute inset-y-0 left-0 flex w-full items-end justify-center px-6 pb-4 pt-6 sm:w-[58%] sm:items-center sm:pb-6">
-              <Image
-                src={project.hero.src}
-                alt={project.hero.alt}
-                width={600}
-                height={1200}
-                className="project-visual h-full max-h-[15.5rem] w-auto object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:max-h-[18.5rem]"
-              />
-            </div>
+            project.hero.kind === "device" ? (
+              <div className="absolute inset-y-0 left-0 flex w-full items-end justify-center px-6 pb-4 pt-6 sm:w-[58%] sm:items-center sm:pb-6">
+                <Image
+                  src={project.hero.src}
+                  alt={project.hero.alt}
+                  width={600}
+                  height={1200}
+                  className="project-visual h-full max-h-[15.5rem] w-auto object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:max-h-[18.5rem]"
+                />
+              </div>
+            ) : (
+              <div className="absolute inset-0">
+                <Image
+                  src={project.hero.src}
+                  alt={project.hero.alt}
+                  width={1600}
+                  height={1000}
+                  className="project-visual h-full w-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent sm:bg-gradient-to-r sm:from-transparent sm:via-black/10 sm:to-black/50" />
+              </div>
+            )
           ) : (
             <div className="absolute inset-0 flex items-center px-8 sm:px-12">
               <p className="display max-w-md text-[clamp(2rem,5vw,3.4rem)] text-white/90">
