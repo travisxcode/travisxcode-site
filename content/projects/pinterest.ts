@@ -85,6 +85,32 @@ export const pinterest: Project = {
       ],
     },
     {
+      id: "journey",
+      title: "User journey",
+      paragraphs: [
+        "The path is short on purpose. Stay on the pin, build a list you can edit, pick a store, finish where groceries already happen.",
+      ],
+      diagrams: [
+        {
+          caption: "From a recipe pin to a retailer cart.",
+          chart: `journey
+    title Shop ingredients
+    section Pin
+      Open a recipe: 5: Person
+      Tap Shop ingredients: 5: Person
+    section List
+      Review matched items: 4: Person
+      Change quantity: 4: Person
+      Swap an alternative: 3: Person
+    section Store
+      Search by zip code: 4: Person
+      Choose a store: 4: Person
+    section Retailer
+      Continue to checkout: 5: Person`,
+        },
+      ],
+    },
+    {
       id: "pin",
       title: "Start on the pin",
       paragraphs: [
@@ -167,7 +193,21 @@ export const pinterest: Project = {
       title: "Engineering",
       paragraphs: [
         "This is production iOS inside a large consumer product. The interesting work is not a single screen. It is how a pin becomes a list, how that list stays editable, and how the handoff to a partner still feels like one decision.",
-        "The feature has to sit in the existing app, degrade when a match is weak, and stay understandable after it ships. Partner details and internal plumbing stay off this page.",
+        "The feature sits in a familiar iOS shape: views bind to a view model, the view model talks to app services, and those services reach a retailer when the person is ready to leave Pinterest. Partner internals stay off this page.",
+      ],
+      diagrams: [
+        {
+          caption: "Views, view models, services, then a retailer — not a grocery store inside Pinterest.",
+          chart: `flowchart TB
+  View[View]
+  VM[ViewModel]
+  Services[App services]
+  Retailer[Retailer]
+  View --> VM
+  VM --> View
+  VM --> Services
+  Services --> Retailer`,
+        },
       ],
     },
     {

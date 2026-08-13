@@ -10,12 +10,17 @@ export type ProjectMedia = {
   label?: string;
 };
 
+export type CaseStudyDiagram = {
+  chart: string;
+  caption?: string;
+};
+
 export type CaseStudyBlock = {
   id: string;
   title: string;
   paragraphs: string[];
   media?: ProjectMedia[];
-  todo?: string;
+  diagrams?: CaseStudyDiagram[];
 };
 
 export type ProjectLink = {

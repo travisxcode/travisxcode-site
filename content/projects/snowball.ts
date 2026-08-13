@@ -103,6 +103,24 @@ export const snowball: Project = {
       paragraphs: [
         "Four rooms, one system. Debt shows remaining principal, payoff horizon, and each account. Invest projects growth. Saving tracks goals. Budget splits the month so leftover money is honest.",
       ],
+      diagrams: [
+        {
+          caption: "One product, four rooms you actually open.",
+          chart: `journey
+    title Snowball
+    section Debt
+      See remaining balance: 5: Person
+      Open an account: 4: Person
+    section Invest
+      Review plans: 4: Person
+      Check growth: 4: Person
+    section Saving
+      See goals: 4: Person
+      Check progress: 4: Person
+    section Budget
+      Split the month: 5: Person`,
+        },
+      ],
       media: [
         {
           kind: "device",
@@ -160,17 +178,30 @@ export const snowball: Project = {
       id: "engineering",
       title: "Engineering",
       paragraphs: [
-        "Snowball is a native iOS product. Architecture and technical decisions will be documented here — persistence, modeling the domain, and the choices that kept the app shippable.",
+        "Snowball is a native iOS product. The screens bind to view models. The view models talk to domain models for debt, investing, saving, and budget. Persistence stays on device so the numbers are there when you open the app.",
+        "There is no grocery-store of a backend here. The architecture is small on purpose: a view, a view model, a model, a store. That is enough to ship a product I can live with.",
       ],
-      todo: "Add architecture notes, diagrams only where they earn their place, and the technical decisions worth sharing.",
+      diagrams: [
+        {
+          caption: "MVVM with local persistence. No remote API required.",
+          chart: `flowchart TB
+  Views[SwiftUI views]
+  VM[ViewModels]
+  Domain["Debt / Invest / Save / Budget"]
+  Store[Local persistence]
+  Views --> VM
+  VM --> Views
+  VM --> Domain
+  Domain --> Store`,
+        },
+      ],
     },
     {
       id: "outcome",
       title: "Outcome",
       paragraphs: [
-        "The product is live as a personal iOS application.",
+        "The product is a personal iOS application I designed, built, and use. There is no public store listing on this page.",
       ],
-      todo: "Add App Store link, version, and any public traction only when verified. Do not invent downloads or revenue.",
     },
     {
       id: "learned",

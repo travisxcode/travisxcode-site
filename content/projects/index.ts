@@ -3,7 +3,7 @@ import { pinterest } from "./pinterest";
 import { snowball } from "./snowball";
 import type { Project } from "./types";
 
-export type { Project, ProjectMedia, CaseStudyBlock } from "./types";
+export type { Project, ProjectMedia, CaseStudyBlock, CaseStudyDiagram } from "./types";
 
 export const projects: Project[] = [pinterest, snowball, centaures];
 

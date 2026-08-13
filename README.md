@@ -59,7 +59,7 @@ railway.toml            Railway build + health check
 
 Required fields: `slug`, `title`, `category`, `status`, `year`, `role`, `platform`, `summary`, `description`, `hero`, `sections`.
 
-Do not invent metrics, revenue, or confidential internals. Use a `todo` string on a section when the real copy is not ready.
+Do not invent metrics, revenue, or confidential internals.
 
 ## Deployment
 
@@ -137,13 +137,16 @@ If you do not want to move DNS to Cloudflare, a weaker fallback is: point `www` 
 
 Light editorial system: warm paper ground, ink text, restrained rust accent, Instrument Serif for display, Geist for UI. Motion is CSS only and disabled under `prefers-reduced-motion`.
 
-## Remaining TODO content
+## Production notes
 
-- Pinterest: approved screenshots, shareable problem/engineering notes, public outcomes only
-- Snowball: App Store screenshots, year, architecture notes, store URL
-- Centaures: demo screenshots, public demo URL if it should be linked from the case study
-- X / Twitter: omitted until a URL exists in this project
-- Experience dates for Booking.com / Agoda and LINE MAN Wongnai: listed as `Previous` until confirmed
+This site is the public portfolio. Case studies use screenshots and diagrams. They do not invent metrics, App Store numbers, or confidential internals.
+
+Still off the page, on purpose:
+
+- Snowball App Store URL — add when there is a public listing
+- Experience dates for Booking.com / Agoda and LINE MAN Wongnai — still `Previous` until confirmed
+- X / Twitter — omitted until a URL exists
+- Pinterest outcomes beyond “shipped in the US with Walmart” — only if they are public
 
 ## Old repository
 

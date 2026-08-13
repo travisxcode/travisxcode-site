@@ -110,6 +110,40 @@ export const centaures: Project = {
       ],
     },
     {
+      id: "journey",
+      title: "Two journeys",
+      paragraphs: [
+        "The product is two paths that share one database. An operator runs training. A learner finishes it.",
+      ],
+      diagrams: [
+        {
+          caption: "Admin — from a company portal to a published course.",
+          chart: `journey
+    title Run training
+    section Portal
+      Log in to the company: 5: Admin
+    section Workspace
+      Read the overview: 4: Admin
+      Create a draft course: 5: Admin
+    section Assign
+      Publish when ready: 4: Admin`,
+        },
+        {
+          caption: "Learner — from the next course to a completion.",
+          chart: `journey
+    title Take training
+    section Home
+      See the next course: 5: Learner
+      Continue: 5: Learner
+    section Player
+      Read the lesson: 4: Learner
+      Flip cards and answer: 5: Learner
+    section Done
+      Training complete: 5: Learner`,
+        },
+      ],
+    },
+    {
       id: "portal",
       title: "A company portal",
       paragraphs: [
@@ -207,6 +241,17 @@ export const centaures: Project = {
       paragraphs: [
         "Centaurse is a TypeScript system. The web app is Next.js. The API is NestJS. Shared types keep the contract honest. Persistence is Postgres. The architecture is layered so the domain stays independent of the framework of the week.",
         "The frontend talks to the API through a typed client. Organization-scoped courses, users, and progress are first-class. Auth is session-based. The point of the structure is to ship a product that can grow without turning into a ball of routes.",
+      ],
+      diagrams: [
+        {
+          caption: "Browser, API, database. One contract in TypeScript.",
+          chart: `flowchart LR
+  Web[Next.js]
+  API[NestJS]
+  DB[(Postgres)]
+  Web --> API
+  API --> DB`,
+        },
       ],
     },
     {

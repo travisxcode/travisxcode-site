@@ -1,3 +1,4 @@
+import { MermaidDiagram } from "@/components/media/mermaid-diagram";
 import { MediaGrid, ProjectMediaBlock } from "@/components/media/project-media";
 import { TextLink } from "@/components/text-link";
 import type { Project } from "@/content/projects";
@@ -54,7 +55,13 @@ export function CaseStudyArticle({
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          {block.todo ? <p className="todo-note">TODO · {block.todo}</p> : null}
+          {block.diagrams?.map((diagram) => (
+            <MermaidDiagram
+              key={diagram.chart}
+              chart={diagram.chart}
+              caption={diagram.caption}
+            />
+          ))}
           {block.media && block.media.length > 0 ? (
             <div className="mt-8">
               <MediaGrid items={block.media} />
