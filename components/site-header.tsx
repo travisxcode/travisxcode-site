@@ -64,6 +64,8 @@ export function SiteHeader() {
             <a
               href={`mailto:${site.email}`}
               className="font-mono text-[0.8rem] tracking-[0.16em] uppercase text-accent"
+            >
+              Say hello
             </a>
           </Container>
         </div>
