@@ -27,6 +27,7 @@ export type ProjectLink = {
   label: string;
   href: string;
   external?: boolean;
+  kind?: "text" | "app-store";
 };
 
 export type ProjectGlow = {

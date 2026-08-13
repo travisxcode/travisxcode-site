@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MermaidDiagram } from "@/components/media/mermaid-diagram";
 import { MediaGrid, ProjectMediaBlock } from "@/components/media/project-media";
 import { TextLink } from "@/components/text-link";
@@ -96,12 +97,29 @@ export function CaseStudyArticle({
 
       {project.links.length > 0 ? (
         <section className="border-t border-zinc-200 py-8">
-          <ul className="flex flex-wrap gap-6">
+          <ul className="flex flex-wrap items-center gap-6">
             {project.links.map((link) => (
               <li key={link.href}>
-                <TextLink href={link.href} external={link.external}>
-                  {link.label}
-                </TextLink>
+                {link.kind === "app-store" ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-block"
+                  >
+                    <Image
+                      src="/images/badges/download-on-the-app-store.svg"
+                      alt={link.label}
+                      width={160}
+                      height={54}
+                      className="h-[40px] w-auto"
+                    />
+                  </a>
+                ) : (
+                  <TextLink href={link.href} external={link.external}>
+                    {link.label}
+                  </TextLink>
+                )}
               </li>
             ))}
           </ul>
