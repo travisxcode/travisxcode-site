@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
+import { articles } from "@/content/writing";
 
 export const dynamic = "force-static";
 
@@ -19,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...articles.map((article) => ({
+      url: `${site.url}/writing/${article.slug}/`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
   ];
 }

@@ -14,7 +14,7 @@ export function CaseStudyArticle({
   onNext,
 }: CaseStudyArticleProps) {
   return (
-    <article className="case-modal px-5 py-8 sm:px-10 sm:py-12">
+    <article className="case-modal px-5 pb-8 pt-14 sm:px-10 sm:pb-12 sm:pt-16">
       <p className="inline-flex items-center gap-2 rounded-full bg-black/5 px-2.5 py-1 font-mono text-[0.62rem] tracking-[0.14em] uppercase text-zinc-600">
         <span className="live-dot" aria-hidden="true" />
         {project.status}
