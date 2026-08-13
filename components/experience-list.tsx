@@ -5,12 +5,12 @@ import { site } from "@/content/site";
 
 export function ExperienceList() {
   return (
-    <Container as="section" className="py-16 sm:py-24">
-      <div className="mb-8 flex items-end justify-between gap-4 sm:mb-10">
+    <Container as="section" className="py-10 sm:py-14">
+      <div className="mb-2 flex items-end justify-between gap-4">
         <SectionHeading>HIGHLIGHTED EXPERIENCES</SectionHeading>
         <a
           href={site.linkedin}
-          className="mb-10 font-mono text-[0.68rem] tracking-[0.16em] uppercase text-ink-faint transition-colors hover:text-ink sm:mb-14"
+          className="mb-5 font-mono text-[0.68rem] tracking-[0.16em] uppercase text-ink-faint transition-colors hover:text-ink sm:mb-6"
           target="_blank"
           rel="noreferrer noopener"
         >

@@ -4,7 +4,7 @@ import { site, social } from "@/content/site";
 
 export function ConnectSection() {
   return (
-    <Container as="section" id="connect" className="py-16 sm:pb-28 sm:pt-24">
+    <Container as="section" id="connect" className="py-10 sm:pb-20 sm:pt-14">
       <SectionHeading>CONNECT</SectionHeading>
       <ul className="space-y-4">
         {social.map((item) => (

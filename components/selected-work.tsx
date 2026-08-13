@@ -29,9 +29,9 @@ export function SelectedWork() {
   }, []);
 
   return (
-    <Container as="section" id="work" className="py-16 sm:py-24">
+    <Container as="section" id="work" className="py-10 sm:py-14">
       <SectionHeading>SELECTED WORKS</SectionHeading>
-      <div className="space-y-8 sm:space-y-12">
+      <div className="space-y-5 sm:space-y-6">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} onOpen={open} />
         ))}

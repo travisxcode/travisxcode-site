@@ -4,9 +4,9 @@ import { site } from "@/content/site";
 
 export function Hero() {
   return (
-    <Container as="header" className="pb-20 pt-16 sm:pb-28 sm:pt-24">
-      <p className="section-kicker mb-10">[WHO I AM]</p>
-      <div className="mb-8">
+    <Container as="header" className="pb-10 pt-12 sm:pb-14 sm:pt-16">
+      <p className="section-kicker mb-6">[WHO I AM]</p>
+      <div className="mb-5">
         <Image
           src="/images/travis-suwanwigo.jpg"
           alt={`${site.name}, portrait`}
@@ -20,7 +20,7 @@ export function Hero() {
         <span className="block">{site.firstName}</span>
         <span className="block">{site.lastName}</span>
       </h1>
-      <p className="mt-8 font-mono text-[0.72rem] tracking-[0.14em] uppercase text-ink-faint">
+      <p className="mt-5 font-mono text-[0.72rem] tracking-[0.14em] uppercase text-ink-faint">
         {site.role}
         <span aria-hidden="true"> · </span>
         {site.location}
