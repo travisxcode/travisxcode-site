@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { MermaidDiagram } from "@/components/media/mermaid-diagram";
 import { MediaGrid, ProjectMediaBlock } from "@/components/media/project-media";
 import { TextLink } from "@/components/text-link";
+import { AppStoreBadge } from "@/components/work/app-store-badge";
 import type { Project } from "@/content/projects";
 
 type CaseStudyArticleProps = {
@@ -40,6 +40,15 @@ export function CaseStudyArticle({
       <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-zinc-600">
         {project.description}
       </p>
+      {project.links.some((link) => link.kind === "app-store") ? (
+        <div className="mt-6">
+          {project.links
+            .filter((link) => link.kind === "app-store")
+            .map((link) => (
+              <AppStoreBadge key={link.href} href={link.href} label={link.label} />
+            ))}
+        </div>
+      ) : null}
 
       <div className="mt-8 flex justify-center overflow-hidden rounded-[24px] bg-[#f3f3ef] p-5 sm:p-8">
         <ProjectMediaBlock media={project.hero} priority />
@@ -95,33 +104,18 @@ export function CaseStudyArticle({
         </section>
       ) : null}
 
-      {project.links.length > 0 ? (
+      {project.links.some((link) => link.kind !== "app-store") ? (
         <section className="border-t border-zinc-200 py-8">
           <ul className="flex flex-wrap items-center gap-6">
-            {project.links.map((link) => (
-              <li key={link.href}>
-                {link.kind === "app-store" ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="inline-block"
-                  >
-                    <Image
-                      src="/images/badges/download-on-the-app-store.svg"
-                      alt={link.label}
-                      width={160}
-                      height={54}
-                      className="h-[40px] w-auto"
-                    />
-                  </a>
-                ) : (
+            {project.links
+              .filter((link) => link.kind !== "app-store")
+              .map((link) => (
+                <li key={link.href}>
                   <TextLink href={link.href} external={link.external}>
                     {link.label}
                   </TextLink>
-                )}
-              </li>
-            ))}
+                </li>
+              ))}
           </ul>
         </section>
       ) : null}
