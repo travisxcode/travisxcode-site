@@ -43,25 +43,29 @@ export function MediaFigure({
     return null;
   }
 
+  const isDevice = media.kind === "device";
+
   return (
-    <figure className={className}>
+    <figure
+      className={`${isDevice ? "mx-auto w-full max-w-[18rem]" : "w-full"} ${className}`}
+    >
       <button
         type="button"
-        className="media-hover block w-full overflow-hidden rounded-[18px] border border-line bg-placeholder text-left"
+        className="media-hover mx-auto block w-full overflow-hidden rounded-[18px] border border-line bg-placeholder text-left"
         onClick={() => setOpen(true)}
         aria-label={`Expand image: ${media.alt}`}
       >
         <Image
           src={media.src}
           alt={media.alt}
-          width={1600}
-          height={1000}
+          width={isDevice ? 750 : 1600}
+          height={isDevice ? 1624 : 1000}
           priority={priority}
-          className="h-auto w-full object-contain"
+          className="mx-auto h-auto w-full object-contain"
         />
       </button>
       {media.caption ? (
-        <figcaption className="mt-3 text-sm text-ink-faint">
+        <figcaption className="mt-3 text-center text-sm text-ink-faint">
           {media.caption}
         </figcaption>
       ) : null}

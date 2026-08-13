@@ -95,14 +95,14 @@ export function ArticleBody({ article, next, onNext }: ArticleBodyProps) {
           } else if (block.type === "image") {
             node = (
               <figure
-                className={`overflow-hidden rounded-[18px] bg-[#f3f3ef] ${block.compact ? "max-w-sm" : ""}`}
+                className={`mx-auto overflow-hidden rounded-[18px] bg-[#f3f3ef] ${block.compact ? "max-w-sm" : ""}`}
               >
                 <Image
                   src={block.src}
                   alt={block.alt}
                   width={block.compact ? 640 : 1400}
                   height={block.compact ? 1280 : 900}
-                  className="h-auto w-full object-contain"
+                  className="mx-auto h-auto w-full object-contain"
                   unoptimized={block.src.endsWith(".gif")}
                 />
               </figure>

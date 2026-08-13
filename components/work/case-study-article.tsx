@@ -39,7 +39,7 @@ export function CaseStudyArticle({
         {project.description}
       </p>
 
-      <div className="mt-8 overflow-hidden rounded-[24px] bg-[#f3f3ef]">
+      <div className="mt-8 flex justify-center overflow-hidden rounded-[24px] bg-[#f3f3ef] p-5 sm:p-8">
         <ProjectMediaBlock media={project.hero} priority />
       </div>
 

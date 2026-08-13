@@ -42,7 +42,14 @@ export function MediaGrid({ items }: MediaGridProps) {
   }
 
   if (items.length === 1) {
-    return <ProjectMediaBlock media={items[0]} />;
+    return (
+      <div className="flex justify-center">
+        <ProjectMediaBlock
+          media={items[0]}
+          className={items[0].kind === "full" ? "w-full" : ""}
+        />
+      </div>
+    );
   }
 
   return (
