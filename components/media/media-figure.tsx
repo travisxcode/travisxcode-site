@@ -57,7 +57,7 @@ export function MediaFigure({
           width={1600}
           height={1000}
           priority={priority}
-          className="h-auto w-full object-cover"
+          className="h-auto w-full object-contain"
         />
       </button>
       {media.caption ? (
@@ -70,7 +70,7 @@ export function MediaFigure({
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/85 p-4"
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-black/90 p-4"
           onClick={() => setOpen(false)}
         >
           <p id={titleId} className="sr-only">

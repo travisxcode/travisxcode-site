@@ -4,34 +4,23 @@ import { site, social } from "@/content/site";
 
 export function ConnectSection() {
   return (
-    <Container as="section" id="connect" className="border-t border-line py-20 sm:py-28">
+    <Container as="section" id="connect" className="py-16 sm:pb-28 sm:pt-24">
       <SectionHeading>CONNECT</SectionHeading>
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-        <h3 className="display max-w-xl text-[2.6rem] leading-[1.05] text-ink sm:text-[3.4rem]">
-          If the work here is relevant, write to me.
-        </h3>
-        <div>
-          <p className="max-w-sm text-lg leading-relaxed text-ink-soft">
-            {site.location}. Email is the most reliable. GitHub and LinkedIn
-            are up to date.
-          </p>
-          <ul className="mt-8 space-y-3">
-            {social.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className="text-xl text-ink underline decoration-line-strong underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
-                  {...(item.href.startsWith("http")
-                    ? { target: "_blank", rel: "noreferrer noopener" }
-                    : undefined)}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <ul className="space-y-4">
+        {social.map((item) => (
+          <li key={item.label}>
+            <a
+              href={item.href}
+              className="display text-[clamp(1.8rem,4vw,3.2rem)] font-medium tracking-[-0.04em] text-ink-soft transition-colors hover:text-ink"
+              {...(item.href.startsWith("http")
+                ? { target: "_blank", rel: "noreferrer noopener" }
+                : undefined)}
+            >
+              {item.label === "Email" ? site.email : item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
     </Container>
   );
 }

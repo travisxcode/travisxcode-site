@@ -4,6 +4,7 @@ export const pinterest: Project = {
   slug: "pinterest",
   number: "01",
   title: "Pinterest",
+  thesis: "Connecting inspiration with shopping on iOS.",
   category: "Commerce / iOS",
   status: "LIVE",
   year: "2024–present",
@@ -13,6 +14,11 @@ export const pinterest: Project = {
     "Building commerce experiences at Pinterest — iOS work that connects inspiration with shopping.",
   description:
     "At Pinterest I work on iOS experiences at the intersection of inspiration and commerce. This case study is a living document. It will deepen as I can share more about the product work, without disclosing confidential internals.",
+  glow: {
+    from: "#3b0d18",
+    via: "#c41e3a",
+    to: "#1a0a12",
+  },
   hero: {
     kind: "hero",
     alt: "Pinterest iOS commerce experience",

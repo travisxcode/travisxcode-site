@@ -4,6 +4,7 @@ export const centaures: Project = {
   slug: "centaures",
   number: "03",
   title: "Centaurse",
+  thesis: "Training software that people will actually finish.",
   category: "Product / SaaS / LMS",
   status: "LIVE / DEMO",
   year: "2026",
@@ -14,6 +15,11 @@ export const centaures: Project = {
     "A modern training platform for teams — courses, a focused learner experience, and the admin tools to run it.",
   description:
     "Centaurse is an online training platform I am building for small and mid-size teams. Admins compose courses from lessons and content blocks. Employees move through a focused player. The product is meant to feel current — not like a slide deck wearing a login screen.",
+  glow: {
+    from: "#041820",
+    via: "#0084c7",
+    to: "#0b2a3a",
+  },
   hero: {
     kind: "browser",
     alt: "Centaurse training platform",

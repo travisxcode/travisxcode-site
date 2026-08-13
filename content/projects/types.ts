@@ -24,10 +24,17 @@ export type ProjectLink = {
   external?: boolean;
 };
 
+export type ProjectGlow = {
+  from: string;
+  via?: string;
+  to: string;
+};
+
 export type Project = {
   slug: string;
   number: string;
   title: string;
+  thesis: string;
   category: string;
   status: ProjectStatus;
   year: string;
@@ -36,6 +43,7 @@ export type Project = {
   type?: string;
   summary: string;
   description: string;
+  glow: ProjectGlow;
   hero: ProjectMedia;
   gallery: ProjectMedia[];
   technologies: string[];
