@@ -20,13 +20,18 @@ export function ExperienceList() {
       <ul>
         {experiences.map((item) => (
           <li key={`${item.company}-${item.role}`}>
-            <article className="experience-row grid gap-1 border-t border-line py-5 sm:grid-cols-[minmax(0,1.3fr)_minmax(0,1.2fr)_auto] sm:items-baseline sm:gap-8 sm:py-6">
+            <article className="experience-row grid gap-1 border-t border-line py-5 sm:grid-cols-[minmax(0,1.2fr)_minmax(0,1.6fr)_auto] sm:items-start sm:gap-8 sm:py-6">
               <h3 className="font-mono text-[0.78rem] tracking-[0.08em] uppercase text-ink-soft">
                 {item.role}
               </h3>
-              <p className="font-mono text-[0.78rem] tracking-[0.08em] uppercase text-ink">
-                {item.company}
-              </p>
+              <div>
+                <p className="font-mono text-[0.78rem] tracking-[0.08em] uppercase text-ink">
+                  {item.company}
+                </p>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-soft">
+                  {item.tagline}
+                </p>
+              </div>
               <p className="font-mono text-[0.72rem] tracking-[0.12em] uppercase text-ink-faint sm:text-right">
                 {item.date}
               </p>
